@@ -1,0 +1,6 @@
+# Caddy gets free HTTPS automatically. sslip.io maps any IP to a hostname, so
+# an EC2 box with no domain still gets a real certificate:
+#   app.<dashed-public-ip>.sslip.io  ->  app.54-246-124-234.sslip.io
+app.YOUR-DASHED-IP.sslip.io {
+    reverse_proxy localhost:8090
+}

@@ -1,0 +1,691 @@
+{
+  "generated": "2026-07-23T17:53:25.003650+00:00",
+  "horizon_days": 10,
+  "classes": {
+    "crypto": {
+      "class": "crypto",
+      "name": "Cataclysm",
+      "label": "Crypto",
+      "dataset": {
+        "instruments": 13,
+        "rows": 29616,
+        "date_start": "2016-07-18",
+        "date_end": "2026-07-13",
+        "train": 11570,
+        "val": 6472,
+        "test": 11574,
+        "test_start": "2024-01-14"
+      },
+      "chosen_model": "neural_net",
+      "decision_threshold": 0.33,
+      "train_turbulent_rate": 0.34,
+      "test_turbulent_rate": 0.164,
+      "val_auc": {
+        "neural_net": 0.7115,
+        "random_forest": 0.7124
+      },
+      "test": {
+        "neural_net": {
+          "accuracy": 0.7664,
+          "precision": 0.3284,
+          "recall": 0.4084,
+          "f1": 0.3641,
+          "roc_auc": 0.7008,
+          "confusion": [
+            [
+              8096,
+              1583
+            ],
+            [
+              1121,
+              774
+            ]
+          ]
+        },
+        "random_forest": {
+          "accuracy": 0.6439,
+          "precision": 0.2619,
+          "recall": 0.6464,
+          "f1": 0.3728,
+          "roc_auc": 0.6974,
+          "confusion": [
+            [
+              6227,
+              3452
+            ],
+            [
+              670,
+              1225
+            ]
+          ]
+        },
+        "baseline_majority": {
+          "accuracy": 0.8363,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "roc_auc": 0.5,
+          "confusion": [
+            [
+              9679,
+              0
+            ],
+            [
+              1895,
+              0
+            ]
+          ]
+        },
+        "baseline_persistence": {
+          "accuracy": 0.752,
+          "precision": 0.2494,
+          "recall": 0.2559,
+          "f1": 0.2526,
+          "roc_auc": 0.6459,
+          "confusion": [
+            [
+              8219,
+              1460
+            ],
+            [
+              1410,
+              485
+            ]
+          ]
+        }
+      },
+      "chosen_test": {
+        "accuracy": 0.7664,
+        "precision": 0.3284,
+        "recall": 0.4084,
+        "f1": 0.3641,
+        "roc_auc": 0.7008,
+        "confusion": [
+          [
+            8096,
+            1583
+          ],
+          [
+            1121,
+            774
+          ]
+        ]
+      },
+      "edge_over_persistence": 0.0549,
+      "top_features": [
+        {
+          "feature": "vol30",
+          "importance": 0.1639
+        },
+        {
+          "feature": "vol20",
+          "importance": 0.1326
+        },
+        {
+          "feature": "ret60",
+          "importance": 0.1247
+        },
+        {
+          "feature": "vol10",
+          "importance": 0.1057
+        },
+        {
+          "feature": "ma_dist200",
+          "importance": 0.0831
+        },
+        {
+          "feature": "ma_dist50",
+          "importance": 0.082
+        }
+      ]
+    },
+    "equities": {
+      "class": "equities",
+      "name": "Vantage",
+      "label": "Equities",
+      "dataset": {
+        "instruments": 8,
+        "rows": 40731,
+        "date_start": "2006-09-23",
+        "date_end": "2026-07-07",
+        "train": 24154,
+        "val": 6211,
+        "test": 10366,
+        "test_start": "2021-06-20"
+      },
+      "chosen_model": "neural_net",
+      "decision_threshold": 0.3,
+      "train_turbulent_rate": 0.34,
+      "test_turbulent_rate": 0.257,
+      "val_auc": {
+        "neural_net": 0.8056,
+        "random_forest": 0.7956
+      },
+      "test": {
+        "neural_net": {
+          "accuracy": 0.7808,
+          "precision": 0.5608,
+          "recall": 0.6729,
+          "f1": 0.6118,
+          "roc_auc": 0.8161,
+          "confusion": [
+            [
+              6304,
+              1402
+            ],
+            [
+              870,
+              1790
+            ]
+          ]
+        },
+        "random_forest": {
+          "accuracy": 0.6649,
+          "precision": 0.4224,
+          "recall": 0.8323,
+          "f1": 0.5604,
+          "roc_auc": 0.816,
+          "confusion": [
+            [
+              4678,
+              3028
+            ],
+            [
+              446,
+              2214
+            ]
+          ]
+        },
+        "baseline_majority": {
+          "accuracy": 0.7434,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "roc_auc": 0.5,
+          "confusion": [
+            [
+              7706,
+              0
+            ],
+            [
+              2660,
+              0
+            ]
+          ]
+        },
+        "baseline_persistence": {
+          "accuracy": 0.7643,
+          "precision": 0.5411,
+          "recall": 0.5368,
+          "f1": 0.539,
+          "roc_auc": 0.7709,
+          "confusion": [
+            [
+              6495,
+              1211
+            ],
+            [
+              1232,
+              1428
+            ]
+          ]
+        }
+      },
+      "chosen_test": {
+        "accuracy": 0.7808,
+        "precision": 0.5608,
+        "recall": 0.6729,
+        "f1": 0.6118,
+        "roc_auc": 0.8161,
+        "confusion": [
+          [
+            6304,
+            1402
+          ],
+          [
+            870,
+            1790
+          ]
+        ]
+      },
+      "edge_over_persistence": 0.0452,
+      "top_features": [
+        {
+          "feature": "vol30",
+          "importance": 0.1825
+        },
+        {
+          "feature": "vol20",
+          "importance": 0.1643
+        },
+        {
+          "feature": "vol10",
+          "importance": 0.1423
+        },
+        {
+          "feature": "ma_dist200",
+          "importance": 0.1056
+        },
+        {
+          "feature": "dd60",
+          "importance": 0.0875
+        },
+        {
+          "feature": "vol5",
+          "importance": 0.0864
+        }
+      ]
+    },
+    "bonds": {
+      "class": "bonds",
+      "name": "Bastion",
+      "label": "Bonds & rates",
+      "dataset": {
+        "instruments": 6,
+        "rows": 30405,
+        "date_start": "2006-10-10",
+        "date_end": "2026-07-07",
+        "train": 18207,
+        "val": 4575,
+        "test": 7623,
+        "test_start": "2021-07-27"
+      },
+      "chosen_model": "random_forest",
+      "decision_threshold": 0.59,
+      "train_turbulent_rate": 0.34,
+      "test_turbulent_rate": 0.456,
+      "val_auc": {
+        "neural_net": 0.8994,
+        "random_forest": 0.9119
+      },
+      "test": {
+        "neural_net": {
+          "accuracy": 0.8392,
+          "precision": 0.8914,
+          "recall": 0.737,
+          "f1": 0.8069,
+          "roc_auc": 0.9297,
+          "confusion": [
+            [
+              3836,
+              312
+            ],
+            [
+              914,
+              2561
+            ]
+          ]
+        },
+        "random_forest": {
+          "accuracy": 0.848,
+          "precision": 0.8171,
+          "recall": 0.8587,
+          "f1": 0.8374,
+          "roc_auc": 0.9335,
+          "confusion": [
+            [
+              3480,
+              668
+            ],
+            [
+              491,
+              2984
+            ]
+          ]
+        },
+        "baseline_majority": {
+          "accuracy": 0.5441,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "roc_auc": 0.5,
+          "confusion": [
+            [
+              4148,
+              0
+            ],
+            [
+              3475,
+              0
+            ]
+          ]
+        },
+        "baseline_persistence": {
+          "accuracy": 0.8251,
+          "precision": 0.8088,
+          "recall": 0.8072,
+          "f1": 0.808,
+          "roc_auc": 0.91,
+          "confusion": [
+            [
+              3485,
+              663
+            ],
+            [
+              670,
+              2805
+            ]
+          ]
+        }
+      },
+      "chosen_test": {
+        "accuracy": 0.848,
+        "precision": 0.8171,
+        "recall": 0.8587,
+        "f1": 0.8374,
+        "roc_auc": 0.9335,
+        "confusion": [
+          [
+            3480,
+            668
+          ],
+          [
+            491,
+            2984
+          ]
+        ]
+      },
+      "edge_over_persistence": 0.0235,
+      "top_features": [
+        {
+          "feature": "vol30",
+          "importance": 0.3123
+        },
+        {
+          "feature": "vol20",
+          "importance": 0.221
+        },
+        {
+          "feature": "vol10",
+          "importance": 0.1538
+        },
+        {
+          "feature": "vol5",
+          "importance": 0.1162
+        },
+        {
+          "feature": "dd60",
+          "importance": 0.0352
+        },
+        {
+          "feature": "ret60",
+          "importance": 0.0312
+        }
+      ]
+    },
+    "commodities": {
+      "class": "commodities",
+      "name": "Crucible",
+      "label": "Commodities",
+      "dataset": {
+        "instruments": 12,
+        "rows": 63297,
+        "date_start": "2006-08-01",
+        "date_end": "2026-07-07",
+        "train": 36036,
+        "val": 10089,
+        "test": 17172,
+        "test_start": "2020-11-29"
+      },
+      "chosen_model": "neural_net",
+      "decision_threshold": 0.3,
+      "train_turbulent_rate": 0.34,
+      "test_turbulent_rate": 0.396,
+      "val_auc": {
+        "neural_net": 0.847,
+        "random_forest": 0.856
+      },
+      "test": {
+        "neural_net": {
+          "accuracy": 0.7445,
+          "precision": 0.6415,
+          "recall": 0.8028,
+          "f1": 0.7131,
+          "roc_auc": 0.8467,
+          "confusion": [
+            [
+              7330,
+              3048
+            ],
+            [
+              1340,
+              5454
+            ]
+          ]
+        },
+        "random_forest": {
+          "accuracy": 0.6627,
+          "precision": 0.5438,
+          "recall": 0.9148,
+          "f1": 0.6821,
+          "roc_auc": 0.8522,
+          "confusion": [
+            [
+              5165,
+              5213
+            ],
+            [
+              579,
+              6215
+            ]
+          ]
+        },
+        "baseline_majority": {
+          "accuracy": 0.6044,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "roc_auc": 0.5,
+          "confusion": [
+            [
+              10378,
+              0
+            ],
+            [
+              6794,
+              0
+            ]
+          ]
+        },
+        "baseline_persistence": {
+          "accuracy": 0.7435,
+          "precision": 0.6769,
+          "recall": 0.6731,
+          "f1": 0.675,
+          "roc_auc": 0.8125,
+          "confusion": [
+            [
+              8195,
+              2183
+            ],
+            [
+              2221,
+              4573
+            ]
+          ]
+        }
+      },
+      "chosen_test": {
+        "accuracy": 0.7445,
+        "precision": 0.6415,
+        "recall": 0.8028,
+        "f1": 0.7131,
+        "roc_auc": 0.8467,
+        "confusion": [
+          [
+            7330,
+            3048
+          ],
+          [
+            1340,
+            5454
+          ]
+        ]
+      },
+      "edge_over_persistence": 0.0342,
+      "top_features": [
+        {
+          "feature": "vol30",
+          "importance": 0.2871
+        },
+        {
+          "feature": "vol20",
+          "importance": 0.2307
+        },
+        {
+          "feature": "vol10",
+          "importance": 0.1334
+        },
+        {
+          "feature": "vol5",
+          "importance": 0.0855
+        },
+        {
+          "feature": "ma_dist200",
+          "importance": 0.0592
+        },
+        {
+          "feature": "dd60",
+          "importance": 0.0445
+        }
+      ]
+    },
+    "fx": {
+      "class": "fx",
+      "name": "Meridian",
+      "label": "FX / currencies",
+      "dataset": {
+        "instruments": 10,
+        "rows": 57016,
+        "date_start": "2006-08-02",
+        "date_end": "2026-07-07",
+        "train": 33991,
+        "val": 8490,
+        "test": 14535,
+        "test_start": "2020-11-30"
+      },
+      "chosen_model": "neural_net",
+      "decision_threshold": 0.21,
+      "train_turbulent_rate": 0.34,
+      "test_turbulent_rate": 0.215,
+      "val_auc": {
+        "neural_net": 0.7351,
+        "random_forest": 0.742
+      },
+      "test": {
+        "neural_net": {
+          "accuracy": 0.7046,
+          "precision": 0.4027,
+          "recall": 0.7729,
+          "f1": 0.5295,
+          "roc_auc": 0.8076,
+          "confusion": [
+            [
+              7826,
+              3583
+            ],
+            [
+              710,
+              2416
+            ]
+          ]
+        },
+        "random_forest": {
+          "accuracy": 0.5555,
+          "precision": 0.3146,
+          "recall": 0.905,
+          "f1": 0.4669,
+          "roc_auc": 0.8037,
+          "confusion": [
+            [
+              5245,
+              6164
+            ],
+            [
+              297,
+              2829
+            ]
+          ]
+        },
+        "baseline_majority": {
+          "accuracy": 0.7849,
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "roc_auc": 0.5,
+          "confusion": [
+            [
+              11409,
+              0
+            ],
+            [
+              3126,
+              0
+            ]
+          ]
+        },
+        "baseline_persistence": {
+          "accuracy": 0.7645,
+          "precision": 0.4526,
+          "recall": 0.4536,
+          "f1": 0.4531,
+          "roc_auc": 0.7401,
+          "confusion": [
+            [
+              9694,
+              1715
+            ],
+            [
+              1708,
+              1418
+            ]
+          ]
+        }
+      },
+      "chosen_test": {
+        "accuracy": 0.7046,
+        "precision": 0.4027,
+        "recall": 0.7729,
+        "f1": 0.5295,
+        "roc_auc": 0.8076,
+        "confusion": [
+          [
+            7826,
+            3583
+          ],
+          [
+            710,
+            2416
+          ]
+        ]
+      },
+      "edge_over_persistence": 0.0675,
+      "top_features": [
+        {
+          "feature": "vol30",
+          "importance": 0.2843
+        },
+        {
+          "feature": "vol20",
+          "importance": 0.2171
+        },
+        {
+          "feature": "vol10",
+          "importance": 0.1412
+        },
+        {
+          "feature": "vol5",
+          "importance": 0.0695
+        },
+        {
+          "feature": "dd60",
+          "importance": 0.0555
+        },
+        {
+          "feature": "ma_dist200",
+          "importance": 0.051
+        }
+      ]
+    }
+  }
+}

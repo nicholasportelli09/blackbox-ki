@@ -1,0 +1,44 @@
+# Render Blueprint — deploys Blackbox KI as a web service with a persistent disk.
+# Push this file to your GitHub repo, then in Render:  New +  ->  Blueprint  ->  pick the repo.
+# Docs: https://render.com/docs/blueprint-spec
+services:
+  - type: web
+    name: blackbox-ki
+    runtime: python
+    plan: starter            # $7/mo — REQUIRED for the persistent disk below.
+                             # For a free (non-persistent) demo: set plan: free and DELETE the `disk:` block.
+    buildCommand: pip install -r requirements.txt
+    # bootstrap.py must run at start (not build) so it seeds into the mounted disk.
+    startCommand: python bootstrap.py && gunicorn -w 1 -b 0.0.0.0:$PORT app_user:app
+    healthCheckPath: /api/catalog
+    disk:
+      name: blackbox-data
+      mountPath: /opt/render/project/src/logs   # persists accounts/portfolios across deploys
+      sizeGB: 1
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.11.9"
+      - key: APP_SECRET
+        generateValue: true    # Render generates a stable 64-char secret once
+      # --- Optional API keys: add these in the Render dashboard (do NOT commit real values) ---
+      # - key: GROQ_API_KEY        # AI features (console.groq.com — free)
+      #   sync: false
+      # - key: OANDA_API_KEY       # live market marks (oanda.com demo — free)
+      #   sync: false
+      # - key: OANDA_ACCOUNT_ID
+      #   sync: false
+      # - key: GOOGLE_CLIENT_ID    # Google Sign-In (optional)
+      #   sync: false
+
+  # --- Optional: the background AI sentiment scanner. Costs a second paid service on Render. ---
+  # - type: worker
+  #   name: blackbox-scanner
+  #   runtime: python
+  #   plan: starter
+  #   buildCommand: pip install -r requirements.txt
+  #   startCommand: python run_scanner.py
+  #   envVars:
+  #     - key: PYTHON_VERSION
+  #       value: "3.11.9"
+  #     - key: GROQ_API_KEY
+  #       sync: false

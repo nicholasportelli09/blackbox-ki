@@ -1,0 +1,50 @@
+{
+ "generated": "2026-07-26T13:18:45.020807+00:00",
+ "event": {
+  "id": "taper_tantrum_2013",
+  "date": "2013-05-22",
+  "title": "The Taper Tantrum",
+  "summary": "Fed chair Bernanke signalled the central bank would start reducing (tapering) bond purchases, sending bond yields sharply higher.",
+  "tags": [
+   "rates",
+   "fx",
+   "equities"
+  ]
+ },
+ "reason": "Today's headlines resemble the Taper Tantrum as they discuss the Federal Reserve's potential rate hikes and their impact on the stock market and gold prices, similar to the market's reaction to Bernanke's tapering announcement in 2013.",
+ "horizon_days": 90,
+ "reactions": {
+  "stack_bal": {
+   "name": "Blackbox Multi-Edge \u2014 Balanced",
+   "pct": -1.7
+  },
+  "stack_agg": {
+   "name": "Blackbox Multi-Edge \u2014 Aggressive",
+   "pct": -7.7
+  },
+  "equity_season": {
+   "name": "Seasonal Equity",
+   "pct": 0.0
+  },
+  "gold_macro": {
+   "name": "Macro Gold",
+   "pct": 0.0
+  },
+  "commod_trend": {
+   "name": "Commodity Trend",
+   "pct": -2.5
+  },
+  "risk_parity": {
+   "name": "Global Risk Parity",
+   "pct": -4.2
+  },
+  "crypto_trend": {
+   "name": "Crypto Momentum",
+   "pct": 0.0
+  },
+  "spx_hold": {
+   "name": "S&P 500 Buy & Hold",
+   "pct": 1.5
+  }
+ }
+}

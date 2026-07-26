@@ -1,0 +1,12 @@
+[Unit]
+Description=Blackbox User App (ETH KI challenge)
+After=network.target
+[Service]
+Type=simple
+User=ubuntu
+WorkingDirectory=/home/ubuntu/blackbox-ki
+ExecStart=/home/ubuntu/.local/bin/gunicorn -w 1 -b 127.0.0.1:8090 app_user:app
+Restart=always
+RestartSec=10
+[Install]
+WantedBy=multi-user.target

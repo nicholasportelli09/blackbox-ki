@@ -1,0 +1,22 @@
+# secrets — NEVER commit
+.env
+
+# local editor/tooling state
+.claude/settings.local.json
+.DS_Store
+
+# python
+__pycache__/
+*.pyc
+
+# runtime state (regenerated at runtime; must not be in the repo)
+logs/*.log
+logs/*.csv
+logs/app_secret.txt
+logs/app_users.json
+logs/app_accounts.json
+
+# NOTE: the trained models (ml/*.pkl) and market-data caches (data/hist, data/crypto)
+# ARE committed on purpose — the deployed app needs them, and the free host cannot
+# retrain from scratch. The seed files in logs/ (catalog.json, sentiment.json,
+# regime_report.*) are also committed so the site works on first boot.

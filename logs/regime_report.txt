@@ -1,0 +1,15 @@
+REGIME RADAR — model suite training report
+==========================================================================
+One neural network per asset class, trained on real ~20-year daily data,
+tested on the most recent untouched years. AUC: 0.50 = coin-flip, 1.0 = perfect.
+
+codename    asset class        AUC  vs persist   edge  test yrs from
+--------------------------------------------------------------------------
+Bastion     Bonds & rates    0.933       0.910 +0.024     2021-07-27
+Crucible    Commodities      0.847       0.812 +0.034     2020-11-29
+Vantage     Equities         0.816       0.771 +0.045     2021-06-20
+Meridian    FX / currencies  0.808       0.740 +0.068     2020-11-30
+Cataclysm   Crypto           0.701       0.646 +0.055     2024-01-14
+
+Most forecastable turbulence: Bastion (Bonds & rates), AUC 0.933.
+Biggest edge of the model over the naive 'vol is already high' baseline: Meridian (+0.068 AUC).

@@ -1,0 +1,241 @@
+{
+ "generated": "2026-07-19T16:37:57.610722+00:00",
+ "n_scanned": 600,
+ "assets": {
+  "equities": {
+   "score": -39.9,
+   "n_items": 89,
+   "n_social": 0,
+   "explanation": "Leaning bearish: of 89 scanned items, 10 read positive and 23 negative, driven by 'crash', 'warning', 'rally', 'sell-off'.",
+   "top": [
+    {
+     "title": "Why Warren Buffett Warns That the Market Is Headed for Trouble - Yahoo Finance",
+     "src": "Yahoo Finance",
+     "score": -1.0,
+     "via": "news"
+    },
+    {
+     "title": "A massive margin call and 'push-button liquidity' torched stocks, but they're poised to rebound - Fortune",
+     "src": "Fortune",
+     "score": 1.0,
+     "via": "news"
+    },
+    {
+     "title": "If a Stock Market Crash Is Coming, History Says Investors Who Make This Simple Move Will Come Out Ahead - The Motley Fool",
+     "src": "The Motley Fool",
+     "score": -1.0,
+     "via": "news"
+    },
+    {
+     "title": "Warren Buffett sends a strong reminder to stock market investors - thestreet.com",
+     "src": "thestreet.com",
+     "score": 1.0,
+     "via": "news"
+    },
+    {
+     "title": "The Unanswered Questions Driving the Stock Market Drop - Barron's",
+     "src": "Barron's",
+     "score": -1.0,
+     "via": "news"
+    }
+   ],
+   "trend": "stable"
+  },
+  "gold": {
+   "score": -18.6,
+   "n_items": 106,
+   "n_social": 0,
+   "explanation": "Leaning bearish: of 106 scanned items, 14 read positive and 21 negative, driven by 'rise', 'risks', 'hike', 'falls'.",
+   "top": [
+    {
+     "title": "Stock Market Losses Led By Nasdaq, AI Stocks; Goldman, GE, Taiwan Semi, IBM In Focus: Weekly Review - Investor's Business Daily",
+     "src": "Investor's Business Daily",
+     "score": -1.0,
+     "via": "news"
+    },
+    {
+     "title": "BofA warns gold prices could fall further as 1980, 2011 peak patterns resurface - Investing.com",
+     "src": "Investing.com",
+     "score": -1.0,
+     "via": "news"
+    },
+    {
+     "title": "Gold price struggling as U.S. retail sales rise 0.2% in June - KITCO",
+     "src": "KITCO",
+     "score": 1.0,
+     "via": "news"
+    },
+    {
+     "title": "Gold and Silver Prices Hit New 8-Month Lows as Dollar, Oil Rise - BullionVault",
+     "src": "BullionVault",
+     "score": 1.0,
+     "via": "news"
+    },
+    {
+     "title": "Gold Price Forecast: Waiting for a Trigger, Ready to Slide - FXEmpire",
+     "src": "FXEmpire",
+     "score": -1.0,
+     "via": "news"
+    }
+   ],
+   "trend": "stable"
+  },
+  "rates": {
+   "score": -45.1,
+   "n_items": 111,
+   "n_social": 0,
+   "explanation": "Strongly bearish: of 111 scanned items, 9 read positive and 25 negative, driven by 'hike', 'hikes', 'high', 'gains'.",
+   "top": [
+    {
+     "title": "Trump says Fed chair should \u2018do whatever he wants\u2019 but criticizes possible interest rate hikes - NBC News",
+     "src": "NBC News",
+     "score": -1.0,
+     "via": "news"
+    },
+    {
+     "title": "Logan: Fed May Need to Hike Interest Rates This Year to Confront Inflation - WSJ",
+     "src": "WSJ",
+     "score": -1.0,
+     "via": "news"
+    },
+    {
+     "title": "Federal Reserve holds interest rates steady but leaves door open to hike - CBS News",
+     "src": "CBS News",
+     "score": -1.0,
+     "via": "news"
+    },
+    {
+     "title": "Fed Governor Michelle Bowman warns against hiking interest rates because of inflation spike - CNBC",
+     "src": "CNBC",
+     "score": -1.0,
+     "via": "news"
+    },
+    {
+     "title": "Fed Chair Kevin Warsh: \u2018Prices are too high.\u2019 Will there be a rate cut at the next Fed meeting? Here\u2019s what to expect - Chase Bank",
+     "src": "Chase Bank",
+     "score": 1.0,
+     "via": "news"
+    }
+   ],
+   "trend": "stable"
+  },
+  "fx": {
+   "score": 9.7,
+   "n_items": 84,
+   "n_social": 0,
+   "explanation": "Mixed/neutral: of 84 scanned items, 17 read positive and 14 negative, driven by 'war', 'rebound', 'high', 'fall'.",
+   "top": [
+    {
+     "title": "Dollar set for weekly drop as traders cut wagers on rate hikes - WTVB",
+     "src": "WTVB",
+     "score": -1.0,
+     "via": "news"
+    },
+    {
+     "title": "US dollar set for a strong second half of the year, Bank of America says - Yahoo Finance",
+     "src": "Yahoo Finance",
+     "score": 1.0,
+     "via": "news"
+    },
+    {
+     "title": "Dollar hits record high in Iran as rial weakens amid renewed conflict - Euronews.com",
+     "src": "Euronews.com",
+     "score": 1.0,
+     "via": "news"
+    },
+    {
+     "title": "Week Ahead: Tug-Of-War Between Softer U.S. Rates And Safe-Haven From Escalating Middle East War - Seeking Alpha",
+     "src": "Seeking Alpha",
+     "score": -1.0,
+     "via": "news"
+    },
+    {
+     "title": "Will the US Dollar Rally Continue? - Morningstar",
+     "src": "Morningstar",
+     "score": 1.0,
+     "via": "news"
+    }
+   ],
+   "trend": "stable"
+  },
+  "crypto": {
+   "score": -30.6,
+   "n_items": 102,
+   "n_social": 0,
+   "explanation": "Leaning bearish: of 102 scanned items, 17 read positive and 31 negative, driven by 'risk', 'slide', 'risks', 'gains'.",
+   "top": [
+    {
+     "title": "Federal Reserve's Lorie Logan calls for modestly higher interest rates, raising pressure on risk assets - Crypto Briefing",
+     "src": "Crypto Briefing",
+     "score": -1.0,
+     "via": "news"
+    },
+    {
+     "title": "Top 5 Altcoins for the Next 100x Crypto \u2013 Best Crypto to Buy Now 2026 - Bitcoin Foundation",
+     "src": "Bitcoin Foundation",
+     "score": 1.0,
+     "via": "news"
+    },
+    {
+     "title": "Crypto Market Today, July 16: Bitcoin Pulls Back as Risk Aversion Weighs on Markets - The Motley Fool",
+     "src": "The Motley Fool",
+     "score": -1.0,
+     "via": "news"
+    },
+    {
+     "title": "Crypto Prices Today: Bitcoin Holds $64K as Ethereum Outperforms - CryptoTicker",
+     "src": "CryptoTicker",
+     "score": 1.0,
+     "via": "news"
+    },
+    {
+     "title": "Why This Bitcoin Slump Is Different - Bloomberg.com",
+     "src": "Bloomberg.com",
+     "score": -1.0,
+     "via": "news"
+    }
+   ],
+   "trend": "stable"
+  },
+  "oil": {
+   "score": 29.9,
+   "n_items": 108,
+   "n_social": 0,
+   "explanation": "Leaning bullish: of 108 scanned items, 39 read positive and 20 negative, driven by 'rise', 'jump', 'war', 'fall'.",
+   "top": [
+    {
+     "title": "Stock Market Today: Nasdaq Drops While TSMC Hits Sell Rule; Oil Shipper Steers Into Entry Point - Investor's Business Daily",
+     "src": "Investor's Business Daily",
+     "score": -1.0,
+     "via": "news"
+    },
+    {
+     "title": "Stock market today: Nasdaq rises, Dow and S&P 500 retreat as oil prices climb on renewed US-Iran tensions - Yahoo Finance",
+     "src": "Yahoo Finance",
+     "score": 1.0,
+     "via": "news"
+    },
+    {
+     "title": "USD/CAD & Forex Forecasts \u2013 Rising Oil Prices Threaten to Break US Dollar Uptrend - Yahoo Finance",
+     "src": "Yahoo Finance",
+     "score": 1.0,
+     "via": "news"
+    },
+    {
+     "title": "How the U.S. Is Trying to Ensure the Dollar\u2019s Dominance During Economic Turmoil - The New York Times",
+     "src": "The New York Times",
+     "score": -1.0,
+     "via": "news"
+    },
+    {
+     "title": "Gas Prices Will Stay Higher for Longer, Even if Oil Falls - WSJ",
+     "src": "WSJ",
+     "score": -1.0,
+     "via": "news"
+    }
+   ],
+   "trend": "stable"
+  }
+ },
+ "method": "Headlines from Google News RSS + Reddit public feeds, scored with a finance-tuned NLP lexicon (polarity + intensifiers). Every score is traceable to its headlines. Advisory only \u2014 validated rules trade."
+}

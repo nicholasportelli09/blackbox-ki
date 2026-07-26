@@ -1,0 +1,9 @@
+# Blackbox KI — runtime dependencies
+flask>=3.0
+requests>=2.31
+pandas>=2.0
+numpy>=1.24
+python-dotenv>=1.0
+gunicorn>=21.2   # production server (Linux/macOS only; not needed for local dev)
+scikit-learn>=1.3  # Regime Radar — our own trained ML model (regime_ai.py)
+joblib>=1.3        # saves/loads the trained model

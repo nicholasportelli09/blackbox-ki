@@ -1,0 +1,10 @@
+.venv/
+__pycache__/
+*.pyc
+.env
+.git/
+.DS_Store
+logs/*.log
+logs/app_secret.txt
+logs/app_users.json
+logs/app_accounts.json

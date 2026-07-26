@@ -1,0 +1,247 @@
+{
+ "generated": "2026-07-21T21:34:38.498220+00:00",
+ "n_scanned": 601,
+ "assets": {
+  "equities": {
+   "score": -3.9,
+   "n_items": 95,
+   "n_social": 0,
+   "explanation": "The overall mood is slightly bearish, driven by concerns about market risks, warnings from investors, and geopolitical tensions, but also with some positive notes from specific stock performances and market developments.",
+   "method": "ai",
+   "top": [
+    {
+     "title": "Jim Cramer's top 10 things to watch in the stock market Monday - CNBC",
+     "src": "CNBC",
+     "score": 1.0,
+     "via": "news"
+    },
+    {
+     "title": "Stock market today: Dow, S&P 500, Nasdaq post weekly losses as semiconductors get smoked - Yahoo Finance",
+     "src": "Yahoo Finance",
+     "score": -1.0,
+     "via": "news"
+    },
+    {
+     "title": "Are we really staring at a massive stock market crash? - Yahoo Finance UK",
+     "src": "Yahoo Finance UK",
+     "score": -1.0,
+     "via": "news"
+    },
+    {
+     "title": "Nasdaq 100 Tops 29,000 As Micron Soars 12%: Stock Market Today - Tesla (NASDAQ:TSLA) - Benzinga",
+     "src": "Benzinga",
+     "score": 1.0,
+     "via": "news"
+    },
+    {
+     "title": "Dow Drops 305 Points as Apple Falls From Highs: Stock Market Today - Kiplinger",
+     "src": "Kiplinger",
+     "score": -1.0,
+     "via": "news"
+    }
+   ],
+   "trend": "improving"
+  },
+  "gold": {
+   "score": 27.5,
+   "n_items": 119,
+   "n_social": 0,
+   "explanation": "The overall sentiment for gold is slightly bullish, driven by expectations of geopolitical tensions, potential Federal Reserve actions, and central bank demand, although rate hike fears and a strong US dollar are weighing on the mood.",
+   "method": "ai",
+   "top": [
+    {
+     "title": "Gold Price Forecast: Gold Rebounds From $4,000 Amid Market Uncertainty - FXEmpire",
+     "src": "FXEmpire",
+     "score": 1.0,
+     "via": "news"
+    },
+    {
+     "title": "Silver price jumps 5%, gold attracts bargain hunters above $4,000 - Mining.com",
+     "src": "Mining.com",
+     "score": 1.0,
+     "via": "news"
+    },
+    {
+     "title": "Why Rising Bond Yields Matter More to Gold Than Investors Realize - StoneX",
+     "src": "StoneX",
+     "score": 1.0,
+     "via": "news"
+    },
+    {
+     "title": "Gold Has Doubled in Less Than Two Years. Which ETF is Better to Play the Historic Rally, GLD or SGDM? - The Motley Fool",
+     "src": "The Motley Fool",
+     "score": 1.0,
+     "via": "news"
+    },
+    {
+     "title": "Is It Better to Play the Historic Gold Rally With a Physical Gold or Mining Stock ETF in 2026? - The Motley Fool",
+     "src": "The Motley Fool",
+     "score": 1.0,
+     "via": "news"
+    }
+   ],
+   "trend": "improving"
+  },
+  "rates": {
+   "score": -22.7,
+   "n_items": 106,
+   "n_social": 0,
+   "explanation": "The overall mood for the 'rates' asset class is slightly bearish due to expectations of potential interest rate hikes from the Federal Reserve to combat inflation, despite some predictions of steady rates.",
+   "method": "ai",
+   "top": [
+    {
+     "title": "The Fed Held Its Target Range For the Fourth Meeting in a Row but Interest Costs Remain High - Peter G. Peterson Foundation",
+     "src": "Peter G. Peterson Foundation",
+     "score": 1.0,
+     "via": "news"
+    },
+    {
+     "title": "Palladium Falls as Oil, Fed Bets Weigh - TradingView",
+     "src": "TradingView",
+     "score": -1.0,
+     "via": "news"
+    },
+    {
+     "title": "Federal Reserve policymakers show support for rate hikes as Warsh reins in guidance - AP News",
+     "src": "AP News",
+     "score": -1.0,
+     "via": "news"
+    },
+    {
+     "title": "What is the relationship between inflation, interest rates, and economic growth, and what does it mean for the new Federal Reserve chair? - Equitable Growth",
+     "src": "Equitable Growth",
+     "score": 1.0,
+     "via": "news"
+    },
+    {
+     "title": "Federal Reserve keeps rate unchanged, but nearly half of policymakers would support hike this year - Oregon Public Broadcasting - OPB",
+     "src": "Oregon Public Broadcasting - OPB",
+     "score": -1.0,
+     "via": "news"
+    }
+   ],
+   "trend": "improving"
+  },
+  "fx": {
+   "score": -10.9,
+   "n_items": 77,
+   "n_social": 0,
+   "explanation": "The overall mood is slightly bullish for the US dollar, driven by its perceived strength and reserve currency status, despite some concerns about volatility and geopolitical risks.",
+   "method": "ai",
+   "top": [
+    {
+     "title": "Sean Foo: Iran War Is Destroying the U.S. Dollar & AI Buildout (Transcript) - The Singju Post",
+     "src": "The Singju Post",
+     "score": -1.0,
+     "via": "news"
+    },
+    {
+     "title": "Op-ed: If you think China needs to dethrone U.S. dollar, you don't understand how it is waging global currency war - CNBC",
+     "src": "CNBC",
+     "score": -1.0,
+     "via": "news"
+    },
+    {
+     "title": "Japanese Yen tumbles to 40-year low as Dollar haven rush deepens - FXStreet",
+     "src": "FXStreet",
+     "score": -1.0,
+     "via": "news"
+    },
+    {
+     "title": "USD/CAD Gains as Soft Inflation Weighs on CAD - TradingPedia",
+     "src": "TradingPedia",
+     "score": 1.0,
+     "via": "news"
+    },
+    {
+     "title": "Canadian dollar falls to one-week low on tariff concerns - Investing.com",
+     "src": "Investing.com",
+     "score": -1.0,
+     "via": "news"
+    }
+   ],
+   "trend": "improving"
+  },
+  "crypto": {
+   "score": 33.4,
+   "n_items": 104,
+   "n_social": 0,
+   "explanation": "The overall sentiment is cautiously bullish, driven by potential regulatory clarity and price increases, but tempered by warnings of potential crashes and market volatility.",
+   "method": "ai",
+   "top": [
+    {
+     "title": "Crypto\u2019s Biggest Moment in Years? Why the Clarity Act Could Change Everything - Bitcoin Foundation",
+     "src": "Bitcoin Foundation",
+     "score": 1.0,
+     "via": "news"
+    },
+    {
+     "title": "Crypto Markets Add $70B Daily as Bitcoin\u2019s Price Hits Monthly High: Market Watch - CryptoPotato",
+     "src": "CryptoPotato",
+     "score": 1.0,
+     "via": "news"
+    },
+    {
+     "title": "CLARITY Act Hopes Add $63 Billion: Only 1% of Bitcoin Supply Blocks $70,000 - BeInCrypto",
+     "src": "BeInCrypto",
+     "score": 1.0,
+     "via": "news"
+    },
+    {
+     "title": "Crypto Market Falls to Nearly Two-Year Low as Stablecoins Shrink - Bitcoin Foundation",
+     "src": "Bitcoin Foundation",
+     "score": -1.0,
+     "via": "news"
+    },
+    {
+     "title": "Top 5 Altcoins for the Next 100x Crypto \u2013 Best Crypto to Buy Now 2026 - Bitcoin Foundation",
+     "src": "Bitcoin Foundation",
+     "score": 1.0,
+     "via": "news"
+    }
+   ],
+   "trend": "deteriorating"
+  },
+  "oil": {
+   "score": 38.9,
+   "n_items": 100,
+   "n_social": 0,
+   "explanation": "The overall sentiment is bullish for the oil asset class, driven by rising oil prices due to ongoing Middle East tensions and concerns over global supply disruptions.",
+   "method": "ai",
+   "top": [
+    {
+     "title": "Oil prices reach a five-week high due to US-Iran attack and Houthi blockade - Marine News Magazine",
+     "src": "Marine News Magazine",
+     "score": 1.0,
+     "via": "news"
+    },
+    {
+     "title": "Why are gasoline prices rising faster than oil prices? Blame it on the \u2018crack.\u2019 - MarketWatch",
+     "src": "MarketWatch",
+     "score": 1.0,
+     "via": "news"
+    },
+    {
+     "title": "Oil prices rise after Trump says Iran will pay for killing U.S. service members - CNBC",
+     "src": "CNBC",
+     "score": 1.0,
+     "via": "news"
+    },
+    {
+     "title": "Why oil prices haven't gone crazy despite 5 months of US-Iran war - Reuters",
+     "src": "Reuters",
+     "score": -1.0,
+     "via": "news"
+    },
+    {
+     "title": "Opinion: Oil prices may fall, but gasoline prices won\u2019t. Look at the trap we\u2019re in. - MarketWatch",
+     "src": "MarketWatch",
+     "score": -1.0,
+     "via": "news"
+    }
+   ],
+   "trend": "stable"
+  }
+ },
+ "method": "Headlines from Google News RSS + Reddit public feeds, read and scored by an AI model per headline (falls back to a keyword lexicon for any bucket where that fails). Every score is traceable to its headlines. Advisory only \u2014 validated rules trade."
+}
