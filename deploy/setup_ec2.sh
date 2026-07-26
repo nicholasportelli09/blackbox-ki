@@ -47,11 +47,13 @@ sudo systemctl daemon-reload
 sudo systemctl enable --now blackbox-app
 sudo systemctl enable --now trading-scanner
 
-echo "==> 6/6  Caddy reverse proxy on a free sslip.io hostname"
+echo "==> 6/6  Caddy reverse proxy on a free nip.io hostname"
 # Cloud-agnostic public IP detection (works on AWS / Oracle / GCP / any VPS)
 IP=$(curl -s --max-time 4 https://api.ipify.org || curl -s --max-time 4 http://169.254.169.254/latest/meta-data/public-ipv4)
 DASHED=$(echo "$IP" | tr '.' '-')
-HOST="app.${DASHED}.sslip.io"
+# nip.io (not sslip.io): some ISPs — e.g. DNA in Finland — hijack *.sslip.io via
+# DNS and send it to a block page. nip.io resolves the same way and isn't blocked.
+HOST="${DASHED}.nip.io"
 sudo tee /etc/caddy/Caddyfile >/dev/null <<EOF
 ${HOST} {
     reverse_proxy localhost:8090
