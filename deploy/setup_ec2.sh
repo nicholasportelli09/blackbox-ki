@@ -30,11 +30,13 @@ if ! command -v caddy >/dev/null 2>&1; then
   sudo apt-get install -y caddy
 fi
 
-echo "==> 3/6  Python dependencies (user install -> ~/.local/bin/gunicorn)"
-pip3 install --user -r requirements.txt
+echo "==> 3/6  Python dependencies (in a venv — Ubuntu 24.04 is PEP 668 externally-managed)"
+python3 -m venv .venv
+.venv/bin/pip install --upgrade pip
+.venv/bin/pip install -r requirements.txt
 
 echo "==> 4/6  Seed data stores"
-python3 bootstrap.py
+.venv/bin/python bootstrap.py
 
 echo "==> 5/6  systemd services"
 sudo cp deploy/blackbox-app.service /etc/systemd/system/
