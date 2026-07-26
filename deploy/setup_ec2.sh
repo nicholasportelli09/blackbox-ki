@@ -9,6 +9,15 @@ if [ "$(pwd)" != "$APP_DIR" ]; then
   echo "!! Run this from $APP_DIR (git clone the repo to exactly that path first)."; exit 1
 fi
 
+echo "==> 0/6  2GB swap (t2.micro has only 1GB RAM — prevents OOM during pip install)"
+if [ ! -f /swapfile ]; then
+  sudo fallocate -l 2G /swapfile
+  sudo chmod 600 /swapfile
+  sudo mkswap /swapfile
+  sudo swapon /swapfile
+  echo '/swapfile none swap sw 0 0' | sudo tee -a /etc/fstab >/dev/null
+fi
+
 echo "==> 1/6  System packages"
 sudo apt-get update -y
 sudo apt-get install -y python3-pip python3-venv debian-keyring debian-archive-keyring apt-transport-https curl
