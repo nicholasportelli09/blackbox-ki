@@ -38,11 +38,12 @@ python3 bootstrap.py
 
 echo "==> 5/6  systemd services"
 sudo cp deploy/blackbox-app.service /etc/systemd/system/
-# Scanner is optional (needs GROQ for full value); enable if you want it:
-# sudo cp deploy/trading-scanner.service /etc/systemd/system/
+# Scanner daemon (sentiment + daily paper-book settle). GROQ key adds smarter
+# sentiment but it runs fine without one.
+sudo cp deploy/trading-scanner.service /etc/systemd/system/
 sudo systemctl daemon-reload
 sudo systemctl enable --now blackbox-app
-# sudo systemctl enable --now trading-scanner
+sudo systemctl enable --now trading-scanner
 
 echo "==> 6/6  Caddy reverse proxy on a free sslip.io hostname"
 # Cloud-agnostic public IP detection (works on AWS / Oracle / GCP / any VPS)
