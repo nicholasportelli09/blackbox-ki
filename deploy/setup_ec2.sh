@@ -45,7 +45,8 @@ sudo systemctl enable --now blackbox-app
 # sudo systemctl enable --now trading-scanner
 
 echo "==> 6/6  Caddy reverse proxy on a free sslip.io hostname"
-IP=$(curl -s http://169.254.169.254/latest/meta-data/public-ipv4 || curl -s https://api.ipify.org)
+# Cloud-agnostic public IP detection (works on AWS / Oracle / GCP / any VPS)
+IP=$(curl -s --max-time 4 https://api.ipify.org || curl -s --max-time 4 http://169.254.169.254/latest/meta-data/public-ipv4)
 DASHED=$(echo "$IP" | tr '.' '-')
 HOST="app.${DASHED}.sslip.io"
 sudo tee /etc/caddy/Caddyfile >/dev/null <<EOF
