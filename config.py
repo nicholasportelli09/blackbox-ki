@@ -60,4 +60,4 @@ MAX_DRAWDOWN_PCT = 0.25      # 25% drawdown halt (demo has more room)
 # Kronos model — mini is 4.1M params, context 2048, much faster on CPU
 KRONOS_MODEL = "NeoQuasar/Kronos-mini"
 KRONOS_TOKENIZER = "NeoQuasar/Kronos-Tokenizer-2k"
-KRONOS_PATH = r"C:\Users\nicho\Kronos"
+KRONOS_PATH = os.getenv("KRONOS_PATH", "")  # optional local Kronos checkout; unused by the web app

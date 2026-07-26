@@ -27,21 +27,27 @@ def main():
         except Exception:
             log.error("user settle failed:")
             log.error(traceback.format_exc())
-        # daily heartbeat push — proves the machine is alive while unattended
+        # daily heartbeat push — proves the machine is alive while unattended.
+        # heartbeat.py is optional (not shipped); skip quietly if absent.
         try:
             from heartbeat import maybe_send
             hb = maybe_send()
             if hb:
                 log.info(f"heartbeat sent: {hb[0]}")
+        except ImportError:
+            pass
         except Exception:
             log.error("heartbeat failed:")
             log.error(traceback.format_exc())
-        # weekly guarded ML retrain (Sundays 22:00+ UTC; adopt only if OOS holds)
+        # weekly guarded ML retrain (Sundays 22:00+ UTC; adopt only if OOS holds).
+        # retrain_ml.py is optional (not shipped); skip quietly if absent.
         try:
             from retrain_ml import maybe_retrain
             r = maybe_retrain()
             if r:
                 log.info("ML weekly retrain: " + "; ".join(f"{k}: {v}" for k, v in r.items()))
+        except ImportError:
+            pass
         except Exception:
             log.error("ML retrain failed:")
             log.error(traceback.format_exc())
