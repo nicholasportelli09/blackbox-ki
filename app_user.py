@@ -1505,6 +1505,15 @@ async function ensureAccountPage(){
     if(r){renderMe(r);return;}
     localStorage.removeItem('bb_uid');
   }
+  if(!(ME&&ME.signed_in)){
+    $('#mebody').innerHTML=`<div class="skel" style="text-align:left;padding:60px 0">
+      <h2 style="font-size:28px;margin-bottom:10px">Sign in to start your Blackbox</h2>
+      <p style="color:var(--mut);margin-bottom:22px">Your Blackbox is tied to your account, so you can log back in from any device and always see what the bot is doing. Practice capital only — no real money.</p>
+      <button class="cta" onclick="openAuth()">Sign in →</button>
+      <button class="cta ghost" style="margin-left:10px" onclick="go('strategies')">Browse strategies</button>
+    </div>`;
+    return;
+  }
   $('#mebody').innerHTML=`<div class="skel" style="text-align:left;padding:60px 0">
     <h2 style="font-size:28px;margin-bottom:10px">You don't have a Blackbox yet</h2>
     <p style="color:var(--mut);margin-bottom:22px">Answer six questions or build your own mix to start a personal paper portfolio.</p>
@@ -2297,6 +2306,10 @@ d("Analysing your mix's diversification and risk…","Diversifikation und Risiko
 d("Portfolio value","Portfoliowert");d("Your mix","Dein Mix");d("AI summary","KI-Zusammenfassung");
 d("🧠 AI risk review","🧠 KI-Risikoprüfung");d("Ask your Blackbox","Frag deine Blackbox");
 d("🖨 Statement","🖨 Kontoauszug");d("Change strategy","Strategie ändern");
+d("Sign in to start your Blackbox","Melde dich an, um deine Blackbox zu starten");
+d("Your Blackbox is tied to your account, so you can log back in from any device and always see what the bot is doing. Practice capital only — no real money.","Deine Blackbox ist mit deinem Konto verknüpft, sodass du dich von jedem Gerät wieder anmelden und immer sehen kannst, was der Bot tut. Nur Übungskapital — kein echtes Geld.");
+d("Sign in →","Anmelden →");
+d("Browse strategies","Strategien ansehen");
 d("You don't have a Blackbox yet","Du hast noch keine Blackbox");
 d("Answer six questions or build your own mix to start a personal paper portfolio.","Beantworte sechs Fragen oder stelle deinen eigenen Mix zusammen, um ein persönliches Papier-Portfolio zu starten.");
 d("Start my Blackbox →","Meine Blackbox starten →");
