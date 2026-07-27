@@ -22,10 +22,28 @@ def available():
     return bool(config.GROQ_API_KEY)
 
 
+def _lang_pref():
+    """'de' when the current web request asks for German (X-Lang header), else None.
+    Guarded so the background scanner (no request context) is unaffected."""
+    try:
+        from flask import request, has_request_context
+        if has_request_context() and request.headers.get("X-Lang", "").lower().startswith("de"):
+            return "de"
+    except Exception:
+        pass
+    return None
+
+
 def ask(prompt, system=None, max_tokens=600, timeout=20):
     """One-shot chat completion. Returns the reply text, or None on any failure."""
     if not config.GROQ_API_KEY:
         return None
+    if _lang_pref() == "de":
+        # Make human-readable output German; keep any JSON keys/structure intact
+        # (ask_json calls through here, so this must not break structured replies).
+        de = ("Write all human-readable text and prose in natural, fluent German. "
+              "Keep any JSON structure, keys and numbers exactly as instructed.")
+        system = (de + " " + system) if system else de
     messages = ([{"role": "system", "content": system}] if system else []) + \
         [{"role": "user", "content": prompt}]
     body = json.dumps({"model": MODEL, "messages": messages, "max_tokens": max_tokens}).encode()
