@@ -10,7 +10,7 @@ book. Design: premium-site-workflow + emil-design-eng.
 """
 import os, json, time, secrets, hashlib
 from datetime import datetime, timezone, timedelta
-from flask import Flask, jsonify, request, render_template_string, Response, session
+from flask import Flask, jsonify, request, render_template_string, Response, session, g
 
 HERE = os.path.dirname(__file__)
 CATALOG = os.path.join(HERE, "logs", "catalog.json")
@@ -81,6 +81,28 @@ TIER_LABELS = ["Capital Preservation", "Balanced Growth", "Growth", "Maximum Gro
 @app.route("/api/catalog")
 def api_catalog():
     return jsonify(_load(CATALOG, {"strategies": []}))
+
+
+@app.after_request
+def _tag_ai_limit(resp):
+    """When a Groq call was blocked by the per-user limit, turn the generic
+    'available:false' AI reply into a clear, localized 'limit reached' message.
+    The single-page client already prefers a server-provided text/answer."""
+    try:
+        if getattr(g, "_ai_rate_limited", False) and resp.is_json:
+            data = resp.get_json(silent=True)
+            if isinstance(data, dict) and data.get("available") is False:
+                de = request.headers.get("X-Lang", "").lower().startswith("de")
+                msg = ("Du hast das KI-Limit vorerst erreicht — bitte versuche es in "
+                       "ein paar Minuten erneut." if de else
+                       "You've reached the AI limit for now — please try again in a few minutes.")
+                data["limited"] = True
+                data.setdefault("text", msg)
+                data.setdefault("answer", msg)
+                resp.set_data(json.dumps(data))
+    except Exception:
+        pass
+    return resp
 
 
 @app.route("/api/sentiment")
