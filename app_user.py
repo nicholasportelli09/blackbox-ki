@@ -312,6 +312,10 @@ def api_recommend():
 @app.route("/api/user/create", methods=["POST"])
 def user_create():
     p = request.get_json(force=True, silent=True) or {}
+    # A Blackbox is now tied to a signed-in account (no anonymous portfolios),
+    # so it's saved to a real user and visible on their dashboard on any device.
+    if not _me()[0]:
+        return jsonify({"need_auth": True}), 401
     name = (p.get("name") or "My").strip()[:24] or "My"
     mix = {k: float(v) for k, v in (p.get("mix") or {}).items() if k in VALID_IDS and float(v) > 0}
     tot = sum(mix.values())
@@ -321,8 +325,20 @@ def user_create():
     users = _load(USERS, {})
     uid = secrets.token_hex(4)
     today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    # Baseline the mix's intraday move AT creation, so a brand-new book reads
+    # exactly 0.00% now and only accrues the move made *after* you started —
+    # you never inherit the part of today's move that happened before you began.
+    try:
+        from user_engine import marks as _marks
+        mk0 = _marks()["strategies"]
+        base_day_ret = sum((w / 100.0) * mk0.get(sid, {}).get("tilt", 1.0)
+                           * mk0.get(sid, {}).get("day_ret", 0.0)
+                           for sid, w in mix.items())
+    except Exception:
+        base_day_ret = 0.0
     users[uid] = {"name": name, "mix": mix, "created": today,
-                  "base_nav": 10000.0, "base_date": today, "history": [[today, 10000.0]]}
+                  "base_nav": 10000.0, "base_date": today, "base_day_ret": base_day_ret,
+                  "history": [[today, 10000.0]]}
     # signed in -> this becomes the account's active Blackbox (replacing any old one)
     a, aid = _me()
     if a:
@@ -490,9 +506,14 @@ def _user_payload(uid):
                            "sentiment": m.get("sentiment", {}), "holdings": m.get("holdings", [])})
     # display-only: user_engine.settle_users() (scanner daemon, after the 21:00 UTC
     # daily close) is the ONE place books roll — no request-time folding here.
-    nav_now = round(u["base_nav"] * (1 + day), 2)
+    # On the creation day only, subtract the intraday move captured at creation so
+    # the book starts at exactly 0% and grows from the moment you began.
+    today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    off = u.get("base_day_ret")
+    eff = day - off if (off is not None and u.get("base_date") == today) else day
+    nav_now = round(u["base_nav"] * (1 + eff), 2)
     return {"uid": uid, "name": u["name"], "created": u["created"], "mix": u["mix"],
-            "nav": nav_now, "day_ret": round(day * 100, 3),
+            "nav": nav_now, "day_ret": round(eff * 100, 3),
             "since_start": round((nav_now / 10000 - 1) * 100, 2),
             "history": u["history"], "strategies": strat_view,
             "note": "Paper portfolio marked to live markets by the same validated rules. Estimates, not investment advice."}
@@ -1400,6 +1421,7 @@ async function refreshMe(){ME=await fetch('/api/me').then(r=>r.json()).catch(()=
   renderAuth();
   $('#heroCta').textContent=((ME.signed_in&&ME.portfolio)||uid())?'View my Blackbox →':"Let's go →";}
 async function afterAuth(){await refreshMe();
+  if(_pendStart&&PENDMIX&&ME.signed_in){_pendStart=false;startBlackbox();return;}
   if(ME.signed_in&&ME.portfolio){go('account')}
   else{go('start')}}
 async function doRegister(){
@@ -1600,15 +1622,19 @@ async function recommend(){
 function showName(mix){PENDMIX=mix;go('start');
   setTimeout(()=>{const nc=$('#namecard');nc.style.display='block';
     nc.scrollIntoView({behavior:'smooth',block:'center'});$('#uname').focus()},80)}
+let _pendStart=false;
 async function startBlackbox(){
   if(!PENDMIX)return;
-  const btn=$('#startBtn');btn.disabled=true;btn.textContent='Starting…';
+  // A Blackbox is tied to an account — sign in first, then we resume automatically.
+  if(!(ME&&ME.signed_in)){_pendStart=true;openAuth();return;}
+  const btn=$('#startBtn');if(btn){btn.disabled=true;btn.textContent='Starting…';}
   const name=($('#uname').value||'My').trim();
   const r=await fetch('/api/user/create',{method:'POST',headers:{'Content-Type':'application/json'},
     body:JSON.stringify({name,mix:PENDMIX})}).then(r=>r.json()).catch(()=>null);
-  btn.disabled=false;btn.textContent='🚀 Start my Blackbox';
+  if(btn){btn.disabled=false;btn.textContent='🚀 Start my Blackbox';}
+  if(r&&r.need_auth){_pendStart=true;openAuth();return;}
   if(!r||!r.user_id){alert('Could not start — check the mix totals 100%.');return}
-  if(r.signed_in)localStorage.removeItem('bb_uid');else localStorage.setItem('bb_uid',r.user_id);
+  localStorage.removeItem('bb_uid');
   $('#heroCta').textContent='View my Blackbox →';
   $('#mebody').innerHTML='<div class="skel"><span class="sp"></span>Syncing your Blackbox with live markets… first sync takes ~20 seconds.</div>';
   go('account');

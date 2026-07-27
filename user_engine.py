@@ -215,6 +215,7 @@ def settle_users():
             day += (w / 100.0) * tilt * dayret.get(sid, 0.0)
         u["base_nav"] = round(u.get("base_nav", 10000.0) * (1 + day), 2)
         u["base_date"] = today
+        u.pop("base_day_ret", None)  # creation-day baseline no longer applies once settled
         u.setdefault("history", []).append([today, u["base_nav"]])
         u["history"] = u["history"][-400:]
         n += 1
